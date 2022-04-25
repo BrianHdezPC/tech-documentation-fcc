@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title>Cascading Style Sheets</title>
+  <link rel="stylesheet" href="styles.css" type="text/css" media=screen>
+  <link rel="icon" href="images/favicon.ico">
+  <!-- Enlace para kit fuente de íconos fontawesome -->
+  <script src="https://kit.fontawesome.com/d6f74fa018.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container">
+  <!-- Empieza sección nav -->
+    <div class="navbar">
+      <nav id="navbar">
+        <header>
+          Cascading Style Sheets
+        </header>
+        <header id="hidden">
+          CSS
+        </header>
+        <div class="links" id="mylinks">
+          <ul>
+            <li><a class="nav-link index" href="#home" onclick="cerrar()"><i class="fa-solid fa-house-chimney"></i></a></li>
+            <li><a class="nav-link" href="#CSS_Basics" onclick="cerrar()">CSS Basics</a></li>
+            <li><a class="nav-link" href="#What_you_should_already_know" onclick="cerrar()">What you should already know</a></li>
+            <li><a class="nav-link" href="#what_is_CSS?" onclick="cerrar()">What is CSS?</a></li>
+            <li><a class="nav-link" href="#Anatomy_of_a_CSS_ruleset" onclick="cerrar()">Anatomy of a CSS ruleset</a></li>
+            <li><a class="nav-link" href="#Selecting_multiple_elements" onclick="cerrar()">Selecting multiple elements</a></li>
+            <li><a class="nav-link" href="#Different_types_of_selectors" onclick="cerrar()">Different types of selectors</a></li>
+            <li><a class="nav-link" href="#CSS:_all_about_boxes" onclick="cerrar()">CSS: all about boxes</a></li>
+            <li><a class="nav-link" href="#Changing_the_page_color" onclick="cerrar()">Changing the page color</a></li>
+            <li><a class="nav-link" href="#Reference" onclick="cerrar()">Reference</a></li>
+            <li><a href="javascript:void(0);" class="nav-link cerrar" onclick="cerrar()">Cerrar Menú</a></li>
+            <!-- colapsa menú de nav cuando viewport es pequeño -->
+            <li><a href="javascript:void(0);" class="nav-link icon" onclick="menuMovil()"><i class="fa fa-bars"></i></a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- Finaliza navbar. Empieza sección principal -->
+    <br>
+
+    <main id="main-doc">
+      <div class="content">
+        <h1 id="home" class="main-section">Styling your Website</h1>
+        <section id="CSS_Basics" class="main-section">
+          <header>
+            CSS Basics
+          </header>
+          <article class="paragraph">
+            <p><abbr title="Cascading Style Sheets">CSS</abbr> is the code that styles web content. CSS basics walks through what you need to get
+              started. We'll answer questions like: How do I make text red? How do I make content display at a certain location
+              in the (webpage) layout? How do I decorate my webpage with background images and colors?</p>
+          </article>
+        </section>
+
+        <br>
+
+        <section id="What_you_should_already_know" class="main-section">
+          <header>
+            What you should already know
+          </header>
+          <article class="paragraph">
+            <p>This guide assumes you have the following basic background:</p>
+            <ul>
+              <li>A general understanding of the Internet and the World Wide Web (WWW).</li>
+              <li>Good working knowledge of HyperText Markup Language (HTML).</li>
+              <li>Some programming experience.</li>
+            </ul>
+          </article>
+        </section>
+
+        <br>
+
+        <section id="what_is_CSS?" class="main-section">
+          <header>
+            What is CSS?
+          </header>
+          <article class="paragraph">
+            <p>Like HTML, CSS is not a programming language. It's not a markup language either.
+              <strong>CSS is a style sheet language</strong>. CSS is what you use to selectively style HTML elements.
+              For example, this CSS selects paragraph text, setting the color to red:</p>
+            <pre class="predefined">
+              <code>
+                <span class="selector">p</span> <span class="punctuation">{</span>
+                  &nbsp;&nbsp;<span class="property">color</span><span class="punctuation">:</span> red<span class="punctuation">;</span>
+                <span class="punctuation">}</span>
+              </code>
+            </pre>
+            <p> Or this one, setting the font size for the paragraph to 20 pixels:</p>
+            <pre class="predefined">
+              <code>
+                <span class="selector">p</span> <span class="punctuation">{</span>
+                  &nbsp;&nbsp;<span class="property">font-size</span><span class="punctuation">:</span> 20<span class="punctuation"><span class="unit">px</span>;</span>
+                <span class="punctuation">}</span>
+              </code>
+            </pre>
+            <p>Let's try it out! Using a text editor, paste the three lines of CSS (above)
+              into a new file. Save the file as <code>style.css</code> in a directory named <code>styles</code>. To make
+              the code work, we still need to apply this CSS (above) to your HTML document.
+              Otherwise, the styling won't change the appearance of the HTML.</p>
+              <p>
+                <ol>
+                  <li>Open your <code>index.html</code> file.<br>
+                    Paste the following line in the head (between the <code>< head ></code> and <code>< /head ></code> tags): </li>
+                    <br>
+                    <code class="code-example">
+                      <span class="tag">
+                      <span class="tag"><span class="punctuation"><</span>link</span>
+                        <span class="attr-name">href</span><span class="attr-value"><span class="punctuation attr-equals">=</span><span class="punctuation">"</span>styles/style.css<span class="punctuation">"</span>
+                        </span>
+                      <span class="attr-name">rel</span><span class="attr-value"><span class="punctuation attr-equals">=</span><span class="punctuation">"</span>stylesheet<span class="punctuation">"</span></span><span class="punctuation">></span></span>
+                    </code>
+                    <br><br>
+                  <li>Save <code>index.html</code> and load it in your browser. If your paragraph text is red, congratulations! Your CSS is working.</li>
+                </ol> </p>
+          </article>
+        </section>
+
+        <br>
+
+        <section id="Anatomy_of_a_CSS_ruleset" class="main-section">
+          <header>
+            Anatomy of a CSS ruleset
+          </header>
+          <article class="paragraph">
+            <p>Let's dissect the CSS code for red paragraph text to understand how it works:</p>
+            <div class="img-1">
+              <img src="images/css-declaration-small.png" alt="CSS declaration for a paragraph">
+            </div>
+            <p>The whole structure is called a <strong>ruleset</strong>. (The term ruleset is often referred to as just rule.) Note the names of the individual parts:</p>
+            <ul>
+              <li><strong>Selector</strong>: This is the HTML element name at the start of the ruleset. It defines the element(s) to be styled (in this example, <code>< p ></code> elements). To style a different element, change the selector.</li>
+              <li><strong>Declaration</strong>: This is a single rule like <code>color: red;</code>. It specifies which of the element's properties you want to style.</li>
+              <li><strong>Properties</strong>: These are ways in which you can style an HTML element. In CSS, you choose which properties you want to affect in the rule. (In this example, <code> color </code> is a property of the <code> < p > </code> elements.)</li>
+              <li><strong>Property value</strong>: To the right of the property—after the colon—there is the property value. This chooses one out of many possible appearances for a given property. (For example, there are many <code>color</code> values in addition to <code>red</code>.)</li>
+            </ul>
+            <p>Note the other important parts of the syntax:</p>
+            <ul>
+              <li>Apart from the selector, each ruleset must be wrapped in curly braces. <code>({})</code>.</li>
+              <li>Within each declaration, you must use a colon  <code>(:)</code>  to separate the property from its value or values.</li>
+              <li>Within each ruleset, you must use a semicolon  <code>(;)</code>  to separate each declaration from the next one.</li>
+            </ul>
+            <p>To modify multiple property values in one ruleset, write them separated by semicolons, like this:</p>
+              <pre>
+                <code>
+                  p {
+                    &nbsp;&nbsp;color: red;
+                    &nbsp;&nbsp;width: 500px;
+                    &nbsp;&nbsp;border: 1px solid black;
+                  }
+                </code>
+                <!-- Añade espacios en blanco antes de la propiedad-->
+              </pre>
+          </article>
+        </section>
+
+        <br>
+
+        <section id="Selecting_multiple_elements" class="main-section">
+          <header>
+            Selecting multiple elements
+          </header>
+          <article class="paragraph">
+            <p>You can also select multiple elements and apply a single ruleset
+              to all of them. Separate multiple selectors by commas. For example:</p>
+            <pre>
+              <code>
+                p, li, h1 {
+                  &nbsp;&nbsp;color: red;
+                }
+              </code>
+              <!-- Añade espacios en blanco antes de la propiedad-->
+            </pre>
+          </article>
+        </section>
+
+        <br>
+
+        <section id="Different_types_of_selectors" class="main-section">
+          <header>
+            Different types of selectors
+          </header>
+          <article class="paragraph">
+            <p>There are many different types of selectors. The examples above use element selectors,
+              which select all elements of a given type. But we can make more specific selections as well.
+              Here are some of the more common types of selectors:</p>
+            <div class="img-1">
+              <img src="images/selectors.jpg" alt="List of CSS selectors">
+            </div>
+            <p>There are many more selectors to discover. To learn more, see the MDN Selectors guide.</p>
+          </article>
+        </section>
+
+        <br>
+
+        <section id="CSS:_all_about_boxes" class="main-section">
+          <header>
+            CSS: all about boxes
+          </header>
+          <article class="paragraph">
+            <p>Something you'll notice about writing CSS: a lot of it is about boxes.
+              his includes setting size, color, and position. Most HTML elements on your page
+              can be thought of as boxes sitting on top of other boxes.<br>
+              CSS layout is mostly based on the box model. Each box taking up space on your page
+              has properties like: </p>
+            <ul>
+              <li><code>padding</code>, the space around the content. In the example below, it is the space around the paragraph text.</li>
+              <li><code>border</code>, the solid line that is just outside the padding.</li>
+              <li><code>margin</code>, the space around the outside of the border.</li>
+            </ul>
+            <p>In this section we also use:</p>
+            <ul>
+              <li><code>width</code> of an element.</li>
+              <li><code>background-color</code>, the color behind an element's content and padding.</li>
+              <li><code>color</code>, the color of an element's content (usually text).</li>
+              <li><code>text-shadow</code>, sets a drop shadow on the text inside an element.</li>
+              <li><code>display</code> sets the display mode of an element.</li>
+            </ul>
+          </article>
+        </section>
+
+        <br>
+
+        <section id="Changing_the_page_color" class="main-section">
+          <header>
+            Changing the page color
+          </header>
+          <article class="paragraph">
+            <pre>
+              <code>
+                html {
+                  &nbsp;&nbsp;background-color: #00539F;
+                }
+              </code>
+              <!-- Añade espacios en blanco antes de la propiedad-->
+            </pre>
+            <p>This rule sets a background color for the entire page. Change the color code to the color you lile the most!</p>
+          </article>
+        </section>
+
+        <br>
+
+        <section id="Reference" class="main-section">
+          <header>
+            Reference
+          </header>
+          <article class="paragraph">
+            <p>If you would like to know more about CSS, please visit <a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics">MDN</a> for more information.</p>
+          </article>
+          <br><br>
+        </section>
+      </div>
+    </main>
+    <!-- Fin del sitio  -->
+  </div>
+  <br><br>
+
+  <!-- Footer -->
+  <footer class="footerweb">
+    <p>© 2022 Copyright MDN Contributors <br>
+      Developed under fair use for training purposes by: Brian Hernández Obregón</p>
+  </footer>
+  <!--Fin Footer  -->
+
+  <!-- Scripts -->
+  <script type="text/javascript" src="script.js"></script>
+  <!-- Fin Scripts -->
+</body>
+
+</html>
